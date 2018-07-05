@@ -2,6 +2,7 @@ package com.mygdx.game.Assets;
 
 import com.badlogic.gdx.assets.AssetDescriptor;
 import com.badlogic.gdx.assets.AssetManager;
+import com.badlogic.gdx.files.FileHandle;
 import com.badlogic.gdx.graphics.Texture;
 
 /**
@@ -18,14 +19,26 @@ public class Assets {
     }
 
     public static void load() {
-        assetManager.load(TESZT);
+        assetManager.load(GRASS_PATTERN);
+        assetManager.load(WATER_PATTERN);
+        assetManager.load(BARBED_WIRE_FENCE_OBJECT);
     }
 
     public static void unload() {
         assetManager.dispose();
     }
 
-    /** Textures */
-    public static final AssetDescriptor<Texture> TESZT
-            = new AssetDescriptor<Texture>("badlogic.jpg", Texture.class);
+    /**
+    TEXTURES
+    */
+
+    /** PATTERRNS */
+    public static final AssetDescriptor<Texture> GRASS_PATTERN
+            = new AssetDescriptor<Texture>("patterns/grass_pattern.jpg", Texture.class);
+    public static final AssetDescriptor<Texture> WATER_PATTERN
+            = new AssetDescriptor<Texture>("patterns/water_pattern.png", Texture.class);
+
+    /** OBJECTS */
+    public static final AssetDescriptor<Texture> BARBED_WIRE_FENCE_OBJECT
+            = new AssetDescriptor<Texture>("objects/barbed_wire_fence_object.png", Texture.class);
 }
