@@ -3,6 +3,7 @@ package com.mygdx.game.Load;
 import com.badlogic.gdx.scenes.scene2d.Stage;
 import com.mygdx.game.Assets.Assets;
 import com.mygdx.game.Game.GameScreen;
+import com.mygdx.game.Menu.MenuScreen;
 import com.mygdx.game.MyGdxGame;
 import com.mygdx.game.ParentClasses.ScreenAndStage.MyScreen;
 
@@ -24,7 +25,7 @@ public class LoadScreen extends MyScreen {
     public void render(float delta) {
         super.render(delta);
         if (Assets.assetManager.update()) {
-            game.setScreen(new GameScreen(game));
+            game.setScreen(new MenuScreen(game));
         }
     }
 

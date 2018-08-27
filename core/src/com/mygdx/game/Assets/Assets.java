@@ -22,15 +22,14 @@ public class Assets {
         assetManager.load(GRASS_PATTERN);
         assetManager.load(WATER_PATTERN);
         assetManager.load(BARBED_WIRE_FENCE_OBJECT);
+        assetManager.load(MENU_BACKGROUND);
     }
 
     public static void unload() {
         assetManager.dispose();
     }
 
-    /**
-    TEXTURES
-    */
+    /** TEXTURES */
 
     /** PATTERRNS */
     public static final AssetDescriptor<Texture> GRASS_PATTERN
@@ -41,4 +40,8 @@ public class Assets {
     /** OBJECTS */
     public static final AssetDescriptor<Texture> BARBED_WIRE_FENCE_OBJECT
             = new AssetDescriptor<Texture>("objects/barbed_wire_fence_object.png", Texture.class);
+
+    /** MENU */
+    public static final AssetDescriptor<Texture> MENU_BACKGROUND
+            = new AssetDescriptor<Texture>("menu/background.png", Texture.class);
 }

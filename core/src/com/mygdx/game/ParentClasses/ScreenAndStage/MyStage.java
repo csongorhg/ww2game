@@ -64,12 +64,14 @@ public abstract class MyStage extends Stage implements InitableInterface {
     }
 
     public void setCameraResetToCenterOfScreen() {
-        OrthographicCamera c = (OrthographicCamera) getCamera();
-        ExtendViewport v = (ExtendViewport) getViewport();
-        c.setToOrtho(false, getViewport().getWorldWidth(), getViewport().getWorldHeight());
-        c.translate((v.getWorldWidth() - v.getMinWorldWidth() / 2) < 0 ? 0 : -((v.getWorldWidth() - v.getMinWorldWidth()) / 2),
-                ((v.getWorldHeight() - v.getMinWorldHeight()) / 2) < 0 ? 0 : -((v.getWorldHeight() - v.getMinWorldHeight()) / 2));
-        c.update();
+        if (getViewport() instanceof ExtendViewport) {
+            OrthographicCamera c = (OrthographicCamera) getCamera();
+            ExtendViewport v = (ExtendViewport) getViewport();
+            c.setToOrtho(false, getViewport().getWorldWidth(), getViewport().getWorldHeight());
+            c.translate((v.getWorldWidth() - v.getMinWorldWidth() / 2) < 0 ? 0 : -((v.getWorldWidth() - v.getMinWorldWidth()) / 2),
+                    ((v.getWorldHeight() - v.getMinWorldHeight()) / 2) < 0 ? 0 : -((v.getWorldHeight() - v.getMinWorldHeight()) / 2));
+            c.update();
+        }
     }
 
     public void setCameraResetToLeftBottomOfScreen() {
@@ -80,15 +82,16 @@ public abstract class MyStage extends Stage implements InitableInterface {
 
     }
 
-    public void resize(int screenWidth, int screenHeight){
+    public void resize(int screenWidth, int screenHeight) {
         getViewport().update(screenWidth, screenHeight, true);
         resized();
     }
 
-    protected void resized(){
+    protected void resized() {
         setCameraResetToCenterOfScreen();
-    };
+    }
 
+    ;
 
     @Override
     public void dispose() {

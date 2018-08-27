@@ -5,8 +5,7 @@ package com.mygdx.game.Assets;
  */
 
 public enum Maps {
-    OMAHA_BEACH_MAP("maps/omaha_beach_map.txt")
-    ;
+    OMAHA_BEACH_MAP("maps/omaha_beach_map.txt");
 
     private final String text;
 
